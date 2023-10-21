@@ -1,0 +1,13 @@
+:root {
+  --main-color: #2e1065;
+  --secondary-color: #12022f;
+  --accent-color: #1f064c;
+  --secondary-accent: #40217a;
+  --hover-color: #40217a;
+  font-family: 'SomeTimeLaterRegular', 'JelleeBold';
+  font-weight: normal;
+  font-style: normal;
+}
+body {
+  background-color: var(--main-color);
+}
