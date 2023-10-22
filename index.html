@@ -16,12 +16,25 @@
       href="https://fontlibrary.org//face/jellee-typeface"
       type="text/css"
     />
+    <link
+      rel="stylesheet"
+      href="https://use.fontawesome.com/releases/v5.3.1/css/all.css"
+      integrity="sha384-mzrmE5qonljUremFsqc01SB46JvROS7bZs3IO2EmfFsd15uHvIt+Y8vEf7N7fWAU"
+      crossorigin="anonymous"
+    />
     <script src="bundle.js" defer></script>
     <title>weather app</title>
   </head>
   <body>
     <div id="content">
-      <div id="card-container"><h1>Weather</h1></div>
+      <div id="card-container">
+        <h1>Weather</h1>
+        <form>
+          <label for="search">Search</label>
+          <input id="search" type="search" pattern=".*\S.*" required />
+          <span class="caret"></span>
+        </form>
+      </div>
     </div>
   </body>
 </html>
