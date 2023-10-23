@@ -10,6 +10,7 @@ function newFetch() {
     e.preventDefault();
     checkWeather();
     fetchWeather();
+    reset();
   }
 
   async function checkWeather() {
@@ -23,6 +24,7 @@ function newFetch() {
 
     const temp = document.querySelector('.temp');
     const conditions = document.querySelector('.conditions');
+    const conditionImg = document.querySelector('.conditionImg');
     const wind = document.querySelector('.wind');
     const humidity = document.querySelector('.humidity');
     const city = document.querySelector('.city');
@@ -32,6 +34,7 @@ function newFetch() {
 
     temp.innerHTML = data.current.temp_f + '°F';
     conditions.innerHTML = `${data.current.condition.text} `;
+    conditionImg.innerHTML = `${data.current.condition.icon}`;
     wind.innerHTML = data.current.wind_mph;
     humidity.innerHTML = data.current.humidity;
 
@@ -41,7 +44,6 @@ function newFetch() {
     timezone.innerHTML = data.location.localtime;
 
     displayData();
-    reset();
 
     console.log(data);
   }
@@ -49,7 +51,7 @@ function newFetch() {
   function displayData() {}
 
   function reset() {
-    submitForm.reset;
+    submitForm.reset();
   }
 
   function fetchWeather() {
