@@ -58,6 +58,7 @@ h5 {
   grid-template-rows: max-content;
   border: 1rem solid var(--secondary-accent);
   border-radius: 10%;
+  height: 30em;
 }
 .display-temp {
   background-color: var(--accent-color);
@@ -123,3 +124,164 @@ form {
   align-items: center;
   width: 40vw;
 }
+
+.group {
+  position: relative;
+  margin-bottom: 45px;
+}
+input {
+  font-size: 18px;
+  padding: 10px 10px 10px 5px;
+  display: block;
+  width: 300px;
+  border: none;
+  border-bottom: 1px solid #757575;
+  background: transparent;
+}
+input:focus {
+  outline: none;
+}
+
+/* LABEL ======================================= */
+label {
+  color: #999;
+  font-size: 18px;
+  font-weight: normal;
+  position: absolute;
+  pointer-events: none;
+  left: 5px;
+  top: 10px;
+  transition: 0.2s ease all;
+  -moz-transition: 0.2s ease all;
+  -webkit-transition: 0.2s ease all;
+}
+
+/* active state */
+input:focus ~ label,
+input:valid ~ label {
+  top: -20px;
+  font-size: 14px;
+  color: #5264ae;
+}
+
+/* BOTTOM BARS ================================= */
+.bar {
+  position: relative;
+  display: block;
+  width: 300px;
+}
+.bar:before,
+.bar:after {
+  content: '';
+  height: 2px;
+  width: 0;
+  bottom: 1px;
+  position: absolute;
+  background: #5264ae;
+  transition: 0.2s ease all;
+  -moz-transition: 0.2s ease all;
+  -webkit-transition: 0.2s ease all;
+}
+.bar:before {
+  left: 50%;
+}
+.bar:after {
+  right: 50%;
+}
+
+/* active state */
+input:focus ~ .bar:before,
+input:focus ~ .bar:after {
+  width: 50%;
+}
+
+/* HIGHLIGHTER ================================== */
+.highlight {
+  position: absolute;
+  height: 60%;
+  width: 100px;
+  top: 25%;
+  left: 0;
+  pointer-events: none;
+  opacity: 0.5;
+}
+
+/* active state */
+input:focus ~ .highlight {
+  -webkit-animation: inputHighlighter 0.3s ease;
+  -moz-animation: inputHighlighter 0.3s ease;
+  animation: inputHighlighter 0.3s ease;
+}
+
+/* ANIMATIONS ================ */
+@-webkit-keyframes inputHighlighter {
+  from {
+    background: #5264ae;
+  }
+  to {
+    width: 0;
+    background: transparent;
+  }
+}
+@-moz-keyframes inputHighlighter {
+  from {
+    background: #5264ae;
+  }
+  to {
+    width: 0;
+    background: transparent;
+  }
+}
+@keyframes inputHighlighter {
+  from {
+    background: #5264ae;
+  }
+  to {
+    width: 0;
+    background: transparent;
+  }
+}
+.cypher-btn-1 {
+  color: var(--accent-color);
+  font-size: 0.6rem;
+  padding: 0.6em 0.6em;
+  background-color: var(--main-color);
+  cursor: pointer;
+  position: relative;
+  border: none;
+}
+
+.cypher-btn-1::before {
+  content: '';
+  position: absolute;
+  left: -10px;
+  top: -10px;
+  width: 40px;
+  height: 40px;
+  /* background: #2e86c1;
+border: 5px solid #2e86c1; */
+  border-top: 5px solid #2e86c1;
+  border-left: 5px solid #2e86c1;
+  transition: all 0.4s;
+}
+
+.cypher-btn-1::after {
+  content: '';
+  position: absolute;
+  bottom: -10px;
+  right: -10px;
+  width: 40px;
+  height: 40px;
+  /* background: #2e86c1;
+border: 5px solid #2e86c1; */
+  border-bottom: 5px solid #2e86c1;
+  border-right: 5px solid #2e86c1;
+  transition: all 0.4s;
+}
+
+.cypher-btn-1:hover:before,
+.cypher-btn-1:hover:after {
+  width: 100%;
+  height: 100%;
+}
+/* css by cyper 1002 */
